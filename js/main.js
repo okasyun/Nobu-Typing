@@ -67,7 +67,7 @@ const answers = [
 const levels = {
     easy: 18000,
     medium: 14000,
-    hard: 80000
+    hard: 8000
 };
 
 // To change level
