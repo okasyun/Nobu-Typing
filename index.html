@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="Typing Game based on Nobu, a Japanese comedian">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Domine:wght@400;700&family=Noto+Serif+JP&family=Playfair+Display:ital@1&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="images/favicon.ico">
+    <title>Nobu-Typing</title>
+</head>
+<body>
+    <a href="" class="header">
+        <span class="char">N</span>
+        <span class="char">o</span>
+        <span class="char">b</span>
+        <span class="char">u</span>
+        <span class="char">-</span>
+        <span class="char">T</span>
+        <span class="char">y</span>
+        <span class="char">p</span>
+        <span class="char">i</span>
+        <span class="char">n</span>
+        <span class="char">g</span>
+        <!-- Nobu-Typing -->
+    </a>
+    <main class="container">
+        <div class="content">
+            <div id="target">千鳥ノブの名ツッコミでタイピングゲームができます</div>
+            <div id="quoteDisplay">Click to Start!!</div>
+            <textarea id="quoteInput" autofocus></textarea>
+        </div>
+        <div class="info">
+            <div id="message"></div>
+            <div id="timeResult"></div>
+            <div class="info-whengame">
+                <div id="timeLeft">残り時間: 0</div>
+                <div id="score">スコア: 0</div>
+            </div>
+        </div>
+        <div id="log"></div>
+        <div class="mode">
+            <button id="easy">簡単</button>
+            <button id="medium">普通</button>
+            <button id="hard">クセすご</button>
+        </div>
+    </main>
+    <img id="nobu"/>
+    <script src="js/main.js"></script>
+</body>
+</html>
