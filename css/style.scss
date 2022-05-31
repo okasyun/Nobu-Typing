@@ -151,6 +151,19 @@ textarea {
         letter-spacing: 0;
     }
 
+
+    #quoteDisplay {
+        & > span {
+            transition: all .4s;
+            
+
+            &.correct {
+                font-size: 10px;
+                color: $cCorrect;
+            }
+        }
+    }
+
     textarea {
         font-size: $smapho-fontSize;
         height: 50px;
@@ -162,7 +175,7 @@ textarea {
     }
 
     button {
-        margin-top: 50px;
+        margin-top: 20px;
     }
 }
 

@@ -178,6 +178,14 @@ textarea {
     letter-spacing: 0;
   }
 
+  #quoteDisplay > span {
+    transition: all 0.4s;
+  }
+  #quoteDisplay > span.correct {
+    font-size: 10px;
+    color: #87CEFA;
+  }
+
   textarea {
     font-size: 15px;
     height: 50px;
@@ -189,7 +197,7 @@ textarea {
   }
 
   button {
-    margin-top: 50px;
+    margin-top: 20px;
   }
 }
 @-webkit-keyframes kf-animate-chars {
