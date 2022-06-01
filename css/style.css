@@ -1,0 +1,222 @@
+@charset "UTF-8";
+body {
+  font-family: "游ゴシック体", "Courier New", monospace;
+  font-family: "Noto Serif JP", serif;
+  text-align: center;
+  margin: 0 auto;
+}
+
+button {
+  position: relative;
+  width: 200px;
+  height: 45px;
+  line-height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border: 2px solid black;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  cursor: pointer;
+  color: black;
+  text-decoration: none !important;
+  border-radius: 8px;
+  transition: all 0.3s;
+}
+button:hover {
+  background-color: black;
+  color: white;
+  box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+.header {
+  display: block;
+  width: 100%;
+  height: 45px;
+  text-decoration: none !important;
+  font-size: 35px;
+  background-color: black;
+  color: white;
+  line-height: 45px;
+  padding: 15px 0;
+  margin-bottom: 10px;
+}
+.header .char {
+  display: inline-block;
+  -webkit-animation-name: kf-animate-chars;
+          animation-name: kf-animate-chars;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-timing-function: cubic-bezier(0.39, 1.57, 0.58, 1);
+          animation-timing-function: cubic-bezier(0.39, 1.57, 0.58, 1);
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+.header .char:nth-child(1) {
+  -webkit-animation-delay: 0.04s;
+          animation-delay: 0.04s;
+}
+.header .char:nth-child(2) {
+  -webkit-animation-delay: 0.08s;
+          animation-delay: 0.08s;
+}
+.header .char:nth-child(3) {
+  -webkit-animation-delay: 0.12s;
+          animation-delay: 0.12s;
+}
+.header .char:nth-child(4) {
+  -webkit-animation-delay: 0.16s;
+          animation-delay: 0.16s;
+}
+.header .char:nth-child(5) {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+.header .char:nth-child(6) {
+  -webkit-animation-delay: 0.24s;
+          animation-delay: 0.24s;
+}
+.header .char:nth-child(7) {
+  -webkit-animation-delay: 0.28s;
+          animation-delay: 0.28s;
+}
+.header .char:nth-child(8) {
+  -webkit-animation-delay: 0.32s;
+          animation-delay: 0.32s;
+}
+.header .char:nth-child(9) {
+  -webkit-animation-delay: 0.36s;
+          animation-delay: 0.36s;
+}
+.header .char:nth-child(10) {
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+}
+.header .char:nth-child(11) {
+  -webkit-animation-delay: 0.44s;
+          animation-delay: 0.44s;
+}
+
+#target, #quoteDisplay {
+  height: 60px;
+  line-height: 60px;
+  font-size: 30px;
+  letter-spacing: 0.2em;
+}
+
+#quoteDisplay > span {
+  transition: all 0.4s;
+}
+#quoteDisplay > span.correct {
+  font-size: 20px;
+  color: #87CEFA;
+}
+#quoteDisplay > span.incorrect {
+  color: #DC143C;
+}
+
+textarea {
+  position: relative;
+  display: inline-block;
+  margin-top: 20px;
+  padding: 20px;
+  border: none;
+  letter-spacing: 0.1em;
+  font-size: 25px;
+  outline: none;
+  height: 120px;
+  width: 60%;
+  border-radius: 8px;
+  color: white;
+  background-color: black;
+}
+
+#log {
+  font-size: 100px;
+}
+
+.info {
+  display: inline-block;
+  position: relative;
+  width: 60%;
+  height: 170px;
+  margin-top: 10px;
+  font-size: 23px;
+  letter-spacing: 0.1em;
+}
+.info > #message, .info #timeResult {
+  position: relative;
+  width: 100%;
+}
+.info > .info-whengame {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.info > div {
+  width: 150px;
+  height: 50px;
+  line-height: 50px;
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 15px;
+  }
+
+  /* 480px以下に適用されるCSS（スマホ用） */
+  #target, #quoteDisplay {
+    font-size: 15px;
+    letter-spacing: 0;
+  }
+
+  #quoteDisplay > span {
+    transition: all 0.4s;
+  }
+  #quoteDisplay > span.correct {
+    font-size: 10px;
+    color: #87CEFA;
+  }
+
+  textarea {
+    font-size: 15px;
+    height: 50px;
+  }
+
+  .info {
+    height: 30px;
+    font-size: 15px;
+  }
+
+  button {
+    margin-top: 20px;
+  }
+}
+@-webkit-keyframes kf-animate-chars {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes kf-animate-chars {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}/*# sourceMappingURL=style.css.map */

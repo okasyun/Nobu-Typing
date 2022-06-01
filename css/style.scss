@@ -1,0 +1,192 @@
+// スマホ画面でも中央にする
+//ランダムで名言15個程度取り出す
+@import "mixin";
+
+$cWhite: white;
+$cBlack: black;
+$cCorrect: #87CEFA;
+$cIcorrect:#DC143C;
+
+$info-fontSize: 23px;
+$smapho-fontSize: 15px;
+
+body {
+    font-family: '游ゴシック体', 'Courier New', monospace;
+    font-family: 'Noto Serif JP', serif;
+    text-align: center;
+    margin: 0 auto;
+}
+
+button {
+    // 文字の大きさによって大きさが影響しないようにする
+    position: relative;
+    width: 200px;
+    height: 45px;
+    line-height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $cWhite;
+    border: 2px solid $cBlack;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    cursor: pointer;
+    color: $cBlack;
+    text-decoration: none !important;
+    border-radius: 8px;
+    transition: all 0.3s;
+
+    &:hover {
+        background-color: $cBlack;
+        color: $cWhite;
+        box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.5);
+    }
+}
+
+.header {
+    display: block;
+    width: 100%;
+    height: 45px;
+    text-decoration: none !important;
+    font-size: 35px;
+    background-color:$cBlack;
+    color: $cWhite;
+    line-height: 45px;
+    padding: 15px 0;
+    margin-bottom: 10px;
+    
+    & .char {
+        display: inline-block;
+        
+        @include animation($name: kf-animate-chars,
+            $duration: 0.5s,
+            $timing-function: cubic-bezier(0.39, 1.57, 0.58, 1),
+            $fill-mode: both);
+        
+        @for $i from 1 through 11 {
+            &:nth-child(#{$i}) {
+                animation-delay: $i * 0.04s;
+            }
+        }
+    }
+}
+
+#target, #quoteDisplay {
+    height: 60px;
+    line-height: 60px;
+    font-size: 30px;
+    letter-spacing: .2em;
+}
+
+
+#quoteDisplay {
+    & > span {
+        transition: all .4s;
+            &.correct {
+                font-size: 20px;
+                color: $cCorrect;
+            }
+    
+            &.incorrect {
+                color: $cIcorrect;
+            }
+        }
+}
+
+textarea {
+    position: relative;
+    display: inline-block;
+    margin-top: 20px;
+    padding: 20px;
+    border: none;
+    letter-spacing: .1em;
+    font-size: 25px;
+    outline: none;
+    height: 120px;
+    width: 60%;
+    border-radius: 8px;
+    color: $cWhite;
+    background-color: $cBlack;
+}
+
+#log {
+    font-size: 100px;
+}
+
+.info {
+    display: inline-block;
+    position: relative;
+    width: 60%; // 変数にする
+    height: 170px;
+    margin-top: 10px;
+    font-size: 23px;
+    letter-spacing: .1em;
+
+    & > #message, #timeResult {
+        position: relative;
+        width: 100%;
+    }
+
+    & > .info-whengame {
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    & > div {
+        width: 150px;
+        height: 50px;
+        line-height: 50px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        font-size: $smapho-fontSize;
+    }
+    /* 480px以下に適用されるCSS（スマホ用） */
+    #target,#quoteDisplay {
+        font-size: $smapho-fontSize;
+        letter-spacing: 0;
+    }
+
+
+    #quoteDisplay {
+        & > span {
+            transition: all .4s;
+            
+
+            &.correct {
+                font-size: 10px;
+                color: $cCorrect;
+            }
+        }
+    }
+
+    textarea {
+        font-size: $smapho-fontSize;
+        height: 50px;
+    }
+
+    .info {
+        height: 30px;
+        font-size: $smapho-fontSize;
+    }
+
+    button {
+        margin-top: 20px;
+    }
+}
+
+@keyframes kf-animate-chars {
+    0% {
+        opacity: 0;
+        transform: translateY(-50%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
